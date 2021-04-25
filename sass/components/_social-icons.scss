@@ -1,0 +1,33 @@
+/* social-icons__list */
+.social-icons__list {
+  display: inline-flex;
+  padding-top: 16px;
+}
+.social-icons__item {
+  & + .social-icons__item {
+    margin-left: 10px;
+  }
+}
+.social-icons__link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    fill: var(--hero-text-color);
+    background-color: var(--accent-color);
+  }
+}
+.social-icons__icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--icons-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .social-icons__link:hover &,
+  .social-icons__link:focus & {
+    fill: var(--hero-text-color);
+  }
+}

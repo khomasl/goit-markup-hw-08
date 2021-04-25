@@ -1,0 +1,104 @@
+/* Рекомендуется всегда подключать */
+/*Стили для box-sizing которые стоит использовать по-умолчанию*/
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Основное тело страницы */
+body {
+  margin: 0; /*Удаляет стандартный маржин 8пх*/
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+}
+/* Стандартный набор стилей для картинок */
+img {
+  display: block; /*чтобы убрать отступ под картинкой ка ынлайновый элем.*/
+  max-width: 100%;
+  height: auto;
+  /* Стили для обнуления верхних отступов у элементов */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* визуальное скрытие */
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+/* section */
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.section__title {
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  color: var(--primary-text-color);
+}
+/* Выравнивание в один ряд списка навигации */
+.menu {
+  display: inline-flex;
+}
+/* Для увеличения кликабельной области ссылок в хедере  */
+.navigation {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+/* Списки без стандартных точек */
+/*Класс для обнуления базовых свойств у списков (ul)*/
+.list {
+  display: flex; /*для всех списков делает флех*/
+  list-style: none;
+  padding-left: 0;
+  // margin-top: 0;
+  // margin-bottom: 0;
+}
+/*для всех списков делает маржин элемента*/
+.list__item:not(:last-child) {
+  margin-right: 30px;
+}
+/*Класс для обнуления базовых свойств у ссылок*/
+.link {
+  text-decoration: none;
+  color: inherit;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}

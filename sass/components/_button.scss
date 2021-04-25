@@ -1,0 +1,87 @@
+/* button */
+.btn {
+  align-items: center;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--primary-text-color);
+  background-color: var(--secondary-bg-color);
+  border: none;
+  border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+    color: var(--hero-text-color);
+    cursor: pointer;
+  }
+}
+.btn-main {
+  padding: 10px 32px;
+  background-color: var(--accent-color);
+  color: var(--hero-text-color);
+}
+// Кнопки форм: модалка ы футер
+.btn-modal-close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 8px;
+  right: 8px;
+  padding: 0px;
+  background: var(--hero-text-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+  }
+}
+.btn-modal-close__icon {
+  margin: 5px;
+}
+
+.btn-form {
+  display: flex;
+  justify-content: center;
+  flex-basis: calc(((100% - 5 * 15px) / 3) * 1 + 35px);
+  padding: 0;
+  width: 200px;
+  height: 50px;
+  color: var(--hero-text-color);
+  background: var(--accent-color);
+}
+.btn-modal-form {
+  padding: 10px 55px;
+  margin-right: auto;
+  margin-left: auto;
+
+  &:hover,
+  &:focus {
+    background-color: --form-btn-bg-color-hover;
+  }
+}
+/* Кнопки портфолио */
+.btn-portfolio {
+  padding: 6px 22px;
+  font-weight: 500;
+  line-height: 1.62;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}
+.btn-portfolio__list {
+  // display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+.btn-portfolio__item:not(:last-child) {
+  margin-right: 8px;
+}

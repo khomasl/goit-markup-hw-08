@@ -1,0 +1,37 @@
+/* Выравнивание в один ряд всех эл. хедера (навигации) */
+.page-header__container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid var(--line-color);
+}
+/* отступы между эл. списка ссылок, кроме последнего */
+.page-header__item:not(:last-child) {
+  margin-right: 50px;
+}
+/* Навигация */
+.page-header__link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--primary-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.page-header__current {
+  color: var(--accent-color);
+  padding-bottom: 0;
+
+  &::after {
+    display: block;
+    margin-top: 28px;
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+  }
+}

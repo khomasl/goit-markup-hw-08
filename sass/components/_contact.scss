@@ -1,0 +1,10 @@
+/* contacts */
+.contact__link {
+  display: flex;
+  padding-bottom: 32px;
+  color: var(--secondary-text-color);
+}
+.contact__icon {
+  fill: currentColor;
+  margin-right: 10px;
+}

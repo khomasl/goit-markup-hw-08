@@ -1,0 +1,32 @@
+/* features */
+.feature-list {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  color: var(--secondary-text-color);
+}
+/* Задаёт ширину эл. списка Особенностей */
+.feature-list__item {
+  width: calc(100% / 12 * var(--grid-item));
+}
+.feature-list__trumb {
+  height: 120px;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+  background-color: var(--secondary-bg-color);
+  border-radius: 4px;
+}
+.feature-list__icon {
+  fill: currentColor;
+  width: 70px;
+  height: 70px;
+}
+.feature-list__title {
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+}
