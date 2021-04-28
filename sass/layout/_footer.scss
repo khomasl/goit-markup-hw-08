@@ -3,12 +3,14 @@
   background-color: var(--hero-bg-color);
 }
 .footer-section {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  @media screen and (min-width: $desktop) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 .footer-section__title {
   margin-bottom: 20px;
-  text-align: left;
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -16,14 +18,34 @@
   color: var(--hero-text-color);
 }
 .footer__container {
-  display: flex;
-  justify-content: space-between;
   /* --grid-item: 2; */
+  @media screen and (min-width: $mobile) {
+    text-align: center;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: space-between;
+    //--grid-item: 4;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .footer__widget-block {
-  flex-basis: calc((50% - 45px) / 2);
+  @media screen and (min-width: $mobile) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 
-  &:last-child {
-    flex-basis: calc(50% - 15px);
+  @media screen and (min-width: $desktop) {
+    text-align: left;
+    flex-basis: calc((50% - 45px) / 2);
+
+    &:last-child {
+      flex-basis: calc(50% - 15px);
+    }
   }
 }

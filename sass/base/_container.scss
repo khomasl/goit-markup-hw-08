@@ -1,7 +1,21 @@
 .container {
-  width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
+
+  // width: 1200px;
+  width: 100%;
+
+  @media screen and (min-width: $mobile) {
+    max-width: $mobile; //max из-за вертикального скрола
+  }
+
+  @media screen and (min-width: $tablet) {
+    max-width: $tablet;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: $desktop;
+  }
 }

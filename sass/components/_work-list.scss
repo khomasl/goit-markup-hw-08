@@ -1,4 +1,14 @@
 /* work */
+.work {
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+}
+.work-list {
+  @media screen and (min-width: $desktop) {
+    --grid-item: 3;
+  }
+}
 .work-list__item {
   position: relative;
 }

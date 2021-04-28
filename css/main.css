@@ -77,7 +77,7 @@
   --card-border-color: #eeeeee;
   --icons-color: #afb1b8;
   --form-btn-bg-color-hover: #188ce8;
-  --grid-item: 3;
+  --grid-item: 1;
 }
 
 /* Рекомендуется всегда подключать */
@@ -90,6 +90,7 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  outline: 2px solid red;
 }
 
 /* Основное тело страницы */
@@ -110,7 +111,7 @@ body {
 img {
   display: block;
   /*чтобы убрать отступ под картинкой ка ынлайновый элем.*/
-  max-width: 100%;
+  width: 100%;
   height: auto;
   /* Стили для обнуления верхних отступов у элементов */
 }
@@ -171,15 +172,21 @@ ul {
 .list {
   display: flex;
   /*для всех списков делает флех*/
+  flex-wrap: wrap;
   list-style: none;
   padding-left: 0;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.list__item {
+  background-color: lightblue;
+  flex-basis: calc((100% - 30px * var(--grid-item)) / var(--grid-item));
+  margin-left: 30px;
+  margin-top: 30px;
 }
 
 /*для всех списков делает маржин элемента*/
-.list__item:not(:last-child) {
-  margin-right: 30px;
-}
-
 /*Класс для обнуления базовых свойств у ссылок*/
 .link {
   text-decoration: none;
@@ -187,8 +194,6 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
-  color: inherit;
 }
 
 .link:hover, .link:focus {
@@ -196,16 +201,33 @@ ul {
 }
 
 .container {
-  width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
+  width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
 }
 
 /* logo */
 .logo {
-  margin-right: 93px;
   text-decoration: none;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -222,6 +244,25 @@ ul {
 
 .logo--white {
   color: var(--hero-text-color);
+}
+
+@media screen and (min-width: 480px) {
+  .logo {
+    max-width: 480px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .logo {
+    max-width: 1200px;
+    margin-right: 93px;
+  }
 }
 
 /* Выравнивание в один ряд всех эл. хедера (навигации) */
@@ -295,14 +336,15 @@ ul {
   background-color: var(--hero-bg-color);
 }
 
-.footer-section {
-  padding-top: 60px;
-  padding-bottom: 60px;
+@media screen and (min-width: 1200px) {
+  .footer-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .footer-section__title {
   margin-bottom: 20px;
-  text-align: left;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -311,17 +353,44 @@ ul {
 }
 
 .footer__container {
-  display: flex;
-  justify-content: space-between;
   /* --grid-item: 2; */
 }
 
-.footer__widget-block {
-  flex-basis: calc((50% - 45px) / 2);
+@media screen and (min-width: 480px) {
+  .footer__container {
+    text-align: center;
+  }
 }
 
-.footer__widget-block:last-child {
-  flex-basis: calc(50% - 15px);
+@media screen and (min-width: 768px) {
+  .footer__container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .footer__widget-block {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__widget-block {
+    text-align: left;
+    flex-basis: calc((50% - 45px) / 2);
+  }
+  .footer__widget-block:last-child {
+    flex-basis: calc(50% - 15px);
+  }
 }
 
 /* contacts */
@@ -339,7 +408,12 @@ ul {
 /* social-icons__list */
 .social-icons__list {
   display: inline-flex;
-  padding-top: 16px;
+  margin-top: 16px;
+  margin-left: 0;
+}
+
+.social-icons__item {
+  --grid-item: 4;
 }
 
 .social-icons__item + .social-icons__item {
@@ -522,15 +596,25 @@ ul {
 
 /* features */
 .feature-list {
-  display: flex;
   padding: 0;
-  list-style: none;
   color: var(--secondary-text-color);
 }
 
 /* Задаёт ширину эл. списка Особенностей */
 .feature-list__item {
-  width: calc(100% / 12 * var(--grid-item));
+  --grid-item: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .feature-list__item {
+    --grid-item: 2;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .feature-list__item {
+    --grid-item: 4;
+  }
 }
 
 .feature-list__trumb {
@@ -557,7 +641,25 @@ ul {
   color: var(--primary-text-color);
 }
 
+@media screen and (min-width: 480px) {
+  .feature-list__title {
+    text-align: center;
+  }
+}
+
 /* work */
+@media screen and (max-width: 1199px) {
+  .work {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .work-list {
+    --grid-item: 3;
+  }
+}
+
 .work-list__item {
   position: relative;
 }
@@ -592,6 +694,19 @@ ul {
 .team__item {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+  --grid-item: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .team__item {
+    --grid-item: 2;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .team__item {
+    --grid-item: 4;
+  }
 }
 
 .team__title {
@@ -607,17 +722,20 @@ ul {
 }
 
 /* Постоянные клиенты */
-.client-icons__list {
-  flex-wrap: wrap;
-  --grid-item: 6;
-}
-
 .client-icons__item {
-  flex-basis: calc((100% - 30px * (var(--grid-item) - 1)) / var(--grid-item));
+  --grid-item: 2;
 }
 
-.client-icons__item + .client-icons__item {
-  margin-left: 30px;
+@media screen and (min-width: 768px) {
+  .client-icons__item {
+    --grid-item: 3;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .client-icons__item {
+    --grid-item: 6;
+  }
 }
 
 .client-icons__link {

@@ -7,6 +7,7 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  outline: 2px solid red; //чтобы проще искать, что ломает верстку
 }
 
 /* Основное тело страницы */
@@ -21,10 +22,12 @@ body {
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
 }
+
 /* Стандартный набор стилей для картинок */
 img {
   display: block; /*чтобы убрать отступ под картинкой ка ынлайновый элем.*/
-  max-width: 100%;
+  //max-width: 100%;
+  width: 100%; //включать когда делем отзывчивые изображения
   height: auto;
   /* Стили для обнуления верхних отступов у элементов */
 }
@@ -77,15 +80,41 @@ ul {
 /*Класс для обнуления базовых свойств у списков (ul)*/
 .list {
   display: flex; /*для всех списков делает флех*/
+  flex-wrap: wrap;
   list-style: none;
   padding-left: 0;
-  // margin-top: 0;
+  margin-left: -30px;
+  margin-top: -30px;
   // margin-bottom: 0;
+
+  @media screen and (min-width: $mobile) {
+    //@error: $mobile; //max из-за вертикального скрола
+  }
+
+  @media screen and (min-width: $tablet) {
+    //display: flex;
+    // flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: $desktop) {
+    //display: flex;
+    //flex-wrap: wrap;
+  }
+}
+.list__item {
+  background-color: lightblue; //временно
+
+  flex-basis: calc((100% - 30px * var(--grid-item)) / var(--grid-item));
+  //width: calc((100% - 30px * var(--grid-item)) / var(--grid-item));
+
+  margin-left: 30px;
+  margin-top: 30px;
 }
 /*для всех списков делает маржин элемента*/
-.list__item:not(:last-child) {
-  margin-right: 30px;
-}
+// .list__item:not(:last-child) {
+//   margin-right: 30px;
+// }
+
 /*Класс для обнуления базовых свойств у ссылок*/
 .link {
   text-decoration: none;
@@ -94,8 +123,6 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
-  color: inherit;
 
   &:hover,
   &:focus {
