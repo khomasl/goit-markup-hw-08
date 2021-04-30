@@ -1,8 +1,11 @@
 .footer-social-icons {
-  padding-top: 12px;
+  @media screen and (min-width: $desktop) {
+    padding-top: 12px;
+  }
 }
 .footer-social-icons__list {
-  padding-top: 0px;
+  padding-top: 0;
+  margin-top: 0;
 }
 .footer-social-icons__link {
   background-color: rgba(255, 255, 255, 0.1);

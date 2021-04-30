@@ -34,11 +34,12 @@
   margin-bottom: 10px;
   font-weight: 700;
   line-height: 1.14;
+  text-align: center;
   text-transform: uppercase;
   color: var(--primary-text-color);
 
-  @media screen and (min-width: $mobile) {
-    text-align: center;
+  @media screen and (min-width: $tablet) {
+    text-align: left;
     //max-width: $mobile; //max из-за вертикального скрола
   }
 }

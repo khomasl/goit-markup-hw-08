@@ -66,16 +66,7 @@ ul {
   text-align: center;
   color: var(--primary-text-color);
 }
-/* Выравнивание в один ряд списка навигации */
-.menu {
-  display: inline-flex;
-}
-/* Для увеличения кликабельной области ссылок в хедере  */
-.navigation {
-  display: flex;
-  align-items: center;
-  margin-right: auto;
-}
+
 /* Списки без стандартных точек */
 /*Класс для обнуления базовых свойств у списков (ul)*/
 .list {

@@ -1,8 +1,31 @@
 /* contacts */
+.contact {
+  display: block;
+  margin-left: 0;
+  //padding: 21px 0px;
+  //padding-bottom: 11px;
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+.contact__item {
+  margin-top: 10px;
+  margin-left: 0;
+  @media screen and (min-width: $desktop) {
+    margin-top: 0px;
+    margin-left: 30px;
+  }
+}
 .contact__link {
-  display: flex;
-  padding-bottom: 32px;
+  // padding: 21px 0px;
   color: var(--secondary-text-color);
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    //padding-bottom: 32px;
+  }
 }
 .contact__icon {
   fill: currentColor;

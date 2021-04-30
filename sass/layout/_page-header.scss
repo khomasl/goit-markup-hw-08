@@ -3,23 +3,58 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  //padding-top: 21px;
+  //padding-bottom: 21px;
   border-bottom: 1px solid var(--line-color);
 }
+
+/* Выравнивание в один ряд списка навигации */
+.menu {
+  display: inline-flex;
+  margin-left: 35px;
+  margin-top: 0;
+
+  @media screen and (min-width: $desktop) {
+    margin-left: -50px;
+  }
+}
+/* Для увеличения кликабельной области ссылок в хедере  */
+.navigation {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+  }
+}
 /* отступы между эл. списка ссылок, кроме последнего */
-.page-header__item:not(:last-child) {
-  margin-right: 50px;
+// .page-header__item:not(:last-child) {
+//   @media screen and (min-width: $tablet) {
+//     margin-right: 50px;
+//   }
+// }
+.page-header__item {
+  margin-left: 50px;
+  margin-top: 32px;
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 0px;
+  }
 }
 /* Навигация */
 .page-header__link {
   display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
+
   text-decoration: none;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 }
 .page-header__current {
   color: var(--accent-color);
