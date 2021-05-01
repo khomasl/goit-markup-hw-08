@@ -1,11 +1,21 @@
 /* Выравнивание в один ряд всех эл. хедера (навигации) */
 .page-header__container {
+  position: relative;
+
   display: flex;
   justify-content: flex-end;
   align-items: center;
   //padding-top: 21px;
   //padding-bottom: 21px;
   border-bottom: 1px solid var(--line-color);
+
+  @media screen and (max-width: 767.98px) {
+    //justify-content: space-between;
+    .menu,
+    .contact {
+      display: none;
+    }
+  }
 }
 
 /* Выравнивание в один ряд списка навигации */
@@ -20,11 +30,9 @@
 }
 /* Для увеличения кликабельной области ссылок в хедере  */
 .navigation {
-  @media screen and (min-width: $tablet) {
-    display: flex;
-    align-items: center;
-    margin-right: auto;
-  }
+  display: flex;
+  align-items: center;
+  margin-right: auto;
 }
 /* отступы между эл. списка ссылок, кроме последнего */
 // .page-header__item:not(:last-child) {

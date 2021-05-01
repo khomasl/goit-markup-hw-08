@@ -7,6 +7,10 @@
   line-height: 1.19;
   color: var(--accent-color);
 
+  &.is-open {
+    display: none;
+  }
+
   /* logo heder */
   &--black {
     color: var(--primary-text-color);
