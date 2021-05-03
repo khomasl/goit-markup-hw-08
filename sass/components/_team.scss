@@ -13,10 +13,6 @@
 
   --grid-item: 1;
 
-  // @media screen and (min-width: $mobile) {
-  //   --grid-item: 1;
-  // }
-
   @media screen and (min-width: $tablet) {
     --grid-item: 2;
   }

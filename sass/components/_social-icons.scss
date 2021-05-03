@@ -1,28 +1,15 @@
 /* social-icons__list */
 .social-icons__list {
   display: inline-flex;
-  //padding-top: 16px;
   margin-top: 16px;
   margin-left: 0;
 }
 .social-icons__item {
+  --grid-item: 4;
+
   & + .social-icons__item {
     margin-left: 10px;
   }
-
-  --grid-item: 4;
-
-  // @media screen and (min-width: $mobile) {
-  //   --grid-item: 1;
-  // }
-
-  // @media screen and (min-width: $tablet) {
-  //   --grid-item: 4;
-  // }
-
-  // @media screen and (min-width: $desktop) {
-  //   --grid-item: 4;
-  // }
 }
 .social-icons__link {
   width: 44px;

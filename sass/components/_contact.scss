@@ -2,8 +2,6 @@
 .contact {
   display: block;
   margin-left: 0;
-  //padding: 21px 0px;
-  //padding-bottom: 11px;
 
   @media screen and (min-width: $desktop) {
     display: flex;
@@ -19,12 +17,10 @@
   }
 }
 .contact__link {
-  // padding: 21px 0px;
   color: var(--secondary-text-color);
 
   @media screen and (min-width: $desktop) {
     display: flex;
-    //padding-bottom: 32px;
   }
 }
 .contact__icon {

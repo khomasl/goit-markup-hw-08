@@ -1,6 +1,8 @@
 /* Выравнивание в один ряд всех эл. хедера (навигации) */
 .page-header__container {
   position: relative;
+  padding-top: 16px;
+  padding-bottom: 16px;
 
   display: flex;
   justify-content: flex-end;
@@ -16,6 +18,10 @@
       display: none;
     }
   }
+  @media screen and (min-width: $tablet) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
 }
 
 /* Выравнивание в один ряд списка навигации */
@@ -30,16 +36,14 @@
 }
 /* Для увеличения кликабельной области ссылок в хедере  */
 .navigation {
+  // padding-top: 16px;
+  // padding-bottom: 16px;
+
   display: flex;
   align-items: center;
   margin-right: auto;
 }
-/* отступы между эл. списка ссылок, кроме последнего */
-// .page-header__item:not(:last-child) {
-//   @media screen and (min-width: $tablet) {
-//     margin-right: 50px;
-//   }
-// }
+
 .page-header__item {
   margin-left: 50px;
   margin-top: 32px;

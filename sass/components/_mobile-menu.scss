@@ -1,34 +1,39 @@
 .mobile-menu-btn {
   background-color: transparent;
   border: none;
+  position: absolute;
+  z-index: 2;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+  }
 
   @media screen and (min-width: 768px) {
     display: none;
   }
+  .icon-close {
+    display: none;
+  }
 }
-.mobile-menu-btn .icon-close {
-  display: none;
-}
-
-.mobile-menu-btn.is-open .icon-close {
-  display: block;
-}
-
-.mobile-menu-btn.is-open .icon-menu {
-  display: none;
-}
-.mobile-menu-btn .icon-close {
-  display: none;
+.mobile-menu-btn.is-open {
+  .icon-close {
+    display: block;
+  }
+  .icon-menu {
+    display: none;
+  }
 }
 
 .menu-container {
   display: none;
   list-style: none;
-  //position: fixed;
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: lightblue;
+  //height: 100vh;
+  background-color: var(--hero-text-color);
   padding: 48px 40px;
   text-align: left;
   font-weight: 500;
@@ -38,11 +43,15 @@
 
   color: var(--primary-text-color);
 
-  //background-color: #ffffff;
+  background-color: var(--hero-text-color);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
 
   &.is-open {
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
   }
 
   @media screen and (min-width: 768px) {
@@ -63,7 +72,7 @@
   text-align: left;
   margin-top: 0;
   margin-left: 0;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 .menu-navigation__link {
   display: inline;
@@ -72,6 +81,7 @@
 .menu-navigation__current {
   color: var(--accent-color);
 }
+
 .menu-contact__list {
   font-size: 34px;
   line-height: 1.18;
@@ -80,17 +90,22 @@
 }
 .menu-contact__item {
   margin-left: 0;
+  margin-top: 32px;
 }
 .menu-contact__item--font {
   font-size: 24px;
   line-height: 1.17;
   color: var(--secondary-text-color);
 }
+.menu-contact__link {
+  display: block;
+  text-decoration: none;
+}
+
 .menu-socials__list {
   --grid-item: 4;
   flex-basis: calc((100% - 20px * var(--grid-item)) / var(--grid-item));
   margin-left: -20px;
-  margin-top: -20px;
 
   font-size: 18px;
   line-height: 1.22;
@@ -98,5 +113,4 @@
 }
 .menu-socials__item {
   margin-left: 20px;
-  margin-top: 20px;
 }

@@ -1,12 +1,11 @@
 /* порфолио карточки*/
 .portfolio__list {
-  //display: flex;
-  //flex-wrap: wrap;
   font-size: 16px;
   line-height: 1.875;
   color: var(--secondary-text-color);
 }
 .portfolio__item {
+  border: 1px solid var(--card-border-color);
   --grid-item: 1;
 
   @media screen and (min-width: $tablet) {
@@ -17,13 +16,7 @@
     --grid-item: 3;
   }
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  // margin-bottom: 30px;
-  // flex-basis: calc((100% - 30px * (var(--grid-item) - 1)) / var(--grid-item));
-  // transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  // &:nth-child(3n) {
-  //   margin-right: 0px;
-  // }
   &:hover {
     color: var(--secondary-text-color);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);

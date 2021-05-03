@@ -3,10 +3,8 @@
   background-color: var(--hero-bg-color);
 }
 .footer-section {
-  // @media screen and (min-width: $desktop) {
   padding-top: 60px;
   padding-bottom: 60px;
-  //}
 }
 .footer-section__title {
   margin-bottom: 20px;
@@ -19,7 +17,6 @@
 }
 
 .footer__container {
-  /* --grid-item: 2; */
   @media screen and (max-width: 1199.98px) {
     text-align: center;
   }
@@ -28,31 +25,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    //--grid-item: 4;
-  }
-
-  @media screen and (min-width: $desktop) {
-    //display: flex;
-    //justify-content: space-between;
   }
 }
 .footer__widget-block {
   text-align: center;
+
   &:not(:last-child) {
     margin-bottom: 60px;
   }
-  @media screen and (min-width: $mobile) {
-    //padding-top: 60px;
-    //padding-bottom: 60px;
-  }
-
-  // @media screen and (min-width: $tablet) {
-  //   flex-basis: calc((50% - 45px) / 2);
-
-  //   &:last-child {
-  //     flex-basis: calc(50% - 15px);
-  //   }
-  // }
 
   @media screen and (min-width: $desktop) {
     text-align: left;
